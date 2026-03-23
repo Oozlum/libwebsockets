@@ -1,5 +1,5 @@
 project(lws-minimal-ss-proxy C)
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.5)
 find_package(libwebsockets CONFIG REQUIRED)
 
 set(SRCS main.c)

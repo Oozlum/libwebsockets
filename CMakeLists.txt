@@ -22,7 +22,7 @@
 # IN THE SOFTWARE.
 #
 
-cmake_minimum_required(VERSION 3.10...4.0)
+cmake_minimum_required(VERSION 3.5...4.0)
 
 if (PICO_SDK_PATH)
 	include(cmake/pico_sdk_import.cmake)
@@ -1190,7 +1190,7 @@ add_custom_command(
 )
 
 add_custom_target(GENHDR DEPENDS  ${PROJECT_BINARY_DIR}/include/lws_config.h)
-if (CMAKE_VERSION VERSION_GREATER_EQUAL 3.15)
+if (${CMAKE_VERSION} VERSION_GREATER 3.15 OR ${CMAKE_VERSION} VERSION_EQUAL 3.15)
     set_property(TARGET GENHDR APPEND PROPERTY ADDITIONAL_CLEAN_FILES
 	    "${PROJECT_BINARY_DIR}/include/libwebsockets")
 endif()
